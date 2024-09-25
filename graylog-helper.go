@@ -139,7 +139,7 @@ func (helper *GraylogHelper) GetLogsWithStreamsByProcess(streams []string, from,
 		logger.Errorw("query-graylog-failed", zap.Error(err), zap.Reflect("body", reqBody), zap.String("url", "/api/search/messages"))
 		return nil, err
 	}
-	return res.([]map[string]any), nil
+	return res, nil
 }
 
 // GetLogsByProcess 查询日志并进行自定义处理
