@@ -201,7 +201,7 @@ func (helper *GraylogHelper) CountLogsWithStreams(streams []string, from, to int
 		}
 		return 0, fmt.Errorf("invalid result: %v", result.DataRows[0])
 	}
-	return 0, fmt.Errorf("no result")
+	return 0, nil
 }
 
 // CountLogs 统计日志总数
